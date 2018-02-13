@@ -1,12 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
-function App() {
+function PlayButton(props) {
+
+  function handlePlayButtonClick() {
+    props.onPlayButtonClick();
+  }
+
   return (
     <div>
-      <p>test</p>
+      <button onClick={handlePlayButtonClick}>Play</button>
     </div>
   );
 }
 
-export default App;
+PlayButton.propTypes = {
+  onPlayButtonClick: PropTypes.func
+}
+
+export default PlayButton;
