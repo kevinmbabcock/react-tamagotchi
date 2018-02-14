@@ -14,14 +14,21 @@ function AddTamagotchi(props) {
   }
 
   return (
-    <div>
+    <div style={{textAlign: 'center'}}>
+      <br></br>
+      <br></br>
+      <h2>Create Your Very Own Tamagotchi!</h2>
+      <br></br>
+      <br></br>
       <form onSubmit={handleNewTamagotchiFormSubmission}>
-        <input
+        <input style={{width: '250px', height: '50px', fontSize: '24px'}}
           type='text'
           id='name'
-          placeholder='name your Tamagochi'
+          placeholder='  Tamagochi`s name'
           ref={(input) => {_name = input;}}/>
-        <button type='submit'>Play!</button>
+        <br></br>
+        <br></br>
+        <button style={{borderRadius: '12px', backgroundColor: 'red', color: 'white', padding: '15px 32px', textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: '20px', border: 'none'}} type='submit'>Play!</button>
       </form>
     </div>
   );

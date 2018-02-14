@@ -11,13 +11,13 @@ function FeedButton(props) {
 
   return (
     <div>
-      <button onClick={handleFeedButtonClick}>Feed</button>
+      <button style={{borderRadius: '12px', backgroundColor: 'green', color: 'white', padding: '15px 32px', textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: '20px', border: 'none'}} onClick={handleFeedButtonClick}>Feed</button>
     </div>
   );
 }
 
 FeedButton.propTypes = {
   onFeedButtonClick: PropTypes.func
-}
+};
 
 export default FeedButton;

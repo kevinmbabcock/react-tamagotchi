@@ -7,16 +7,27 @@ import PropTypes from 'prop-types';
 
 function PlayGame(props) {
   return (
-    <div>
-      <h3>{props.myTamagotchi.name}</h3>
-      <ul>
-        <li>Fun: {props.myTamagotchi.fun}</li>
-        <li>Hunger: {props.myTamagotchi.hunger}</li>
-        <li>Energy: {props.myTamagotchi.energy}</li>
-      </ul>
-      <PlayButton onPlayButtonClick={props.onPlayButtonClick} />
-      <FeedButton onFeedButtonClick={props.onFeedButtonClick} />
-      <SleepButton onSleepButtonClick={props.onSleepButtonClick} />
+    <div style={{textAlign: 'center'}}>
+      <h2>Take care of Your  <span style={{color: 'red', fontSize: '56px'}}>{props.myTamagotchi.name}</span> Tamagotchi!</h2>
+      <h3>Fun Level: <span style={{color: 'yellow'}}>{props.myTamagotchi.fun}</span></h3>
+      <h3>Hunger Level: <span style={{color: 'green'}}>{props.myTamagotchi.hunger}</span></h3>
+      <h3>Energy Level: <span style={{color: 'blue'}}>{props.myTamagotchi.energy}</span></h3>
+      <br></br>
+      <div style={{alignItems: 'center'}} className="row">
+        <div className="col-md-3">
+        </div>
+        <div className="col-md-2">
+          <PlayButton onPlayButtonClick={props.onPlayButtonClick} />
+        </div>
+        <div className="col-md-2">
+          <FeedButton onFeedButtonClick={props.onFeedButtonClick} />
+        </div>
+        <div className="col-md-2">
+          <SleepButton onSleepButtonClick={props.onSleepButtonClick} />
+        </div>
+        <div className="col-md-3">
+        </div>
+      </div>
     </div>
   );
 }
@@ -26,6 +37,6 @@ PlayGame.propTypes = {
   onFeedButtonClick: PropTypes.func,
   onSleepButtonClick: PropTypes.func,
   myTamagotchi: PropTypes.object
-}
+};
 
 export default PlayGame;

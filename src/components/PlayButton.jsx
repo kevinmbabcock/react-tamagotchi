@@ -10,13 +10,13 @@ function PlayButton(props) {
 
   return (
     <div>
-      <button onClick={handlePlayButtonClick}>Play</button>
+      <button style={{borderRadius: '12px', backgroundColor: 'yellow', color: 'black', padding: '15px 32px', textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: '20px', border: 'none'}} onClick={handlePlayButtonClick}>Play</button>
     </div>
   );
 }
 
 PlayButton.propTypes = {
   onPlayButtonClick: PropTypes.func
-}
+};
 
 export default PlayButton;

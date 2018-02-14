@@ -10,13 +10,13 @@ function SleepButton(props) {
 
   return (
     <div>
-      <button onClick={handleSleepButtonClick}>Sleep</button>
+      <button style={{borderRadius: '12px', backgroundColor: 'blue', color: 'white', padding: '15px 32px', textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: '20px', border: 'none'}} onClick={handleSleepButtonClick}>Sleep</button>
     </div>
   );
 }
 
 SleepButton.propTypes = {
   onSleepButtonClick: PropTypes.func
-}
+};
 
 export default SleepButton;

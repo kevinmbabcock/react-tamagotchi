@@ -1,7 +1,7 @@
 import React from 'react';
 import PlayGame from './PlayGame';
 import NewGame from './NewGame';
-
+import Header from './Header';
 
 class App extends React.Component {
 
@@ -58,7 +58,19 @@ class App extends React.Component {
       currentlyVisibleContent = <NewGame onNewTamagotchiCreation={this.handleNewTamagotchiCreation} />;
     }
     return (
-      <div>
+      <div className="container">
+        <style jsx global>{`
+        body {
+          background-color: black;
+          color: white;
+          font-family: Georgia
+        }
+        `}</style>
+        <br/>
+        <br/>
+        <Header />
+        <br/>
+        <br/>
         {currentlyVisibleContent}
       </div>
     );
