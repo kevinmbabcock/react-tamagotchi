@@ -8,7 +8,7 @@ function AddTamagotchi(props) {
 
   function handleNewTamagotchiFormSubmission(event) {
     event.preventDefault();
-    props.onNewTamagotchiCreation({name: _name.value, hunger: 10, fun: 10, energy: 10, timeCreated: new Moment()});
+    props.onNewTamagotchiCreation({name: _name.value, hunger: 10, fun: 10, energy: 10, timeCreated: new Date()});
     _name.value = '';
     props.onNewGameCreation();
   }
