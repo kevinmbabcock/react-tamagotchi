@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
-
 
 function AddTamagotchi(props) {
   let _name = null;
 
   function handleNewTamagotchiFormSubmission(event) {
     event.preventDefault();
-    props.onNewTamagotchiCreation({name: _name.value, hunger: 10, fun: 10, energy: 10, timeCreated: new Date()});
+    props.onNewTamagotchiCreation({name: _name.value, hunger: 10, fun: 10, energy: 10});
     _name.value = '';
     props.onNewGameCreation();
   }

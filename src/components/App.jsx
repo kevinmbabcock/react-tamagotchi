@@ -15,17 +15,50 @@ class App extends React.Component {
     this.handlePlayButtonClick = this.handlePlayButtonClick.bind(this);
     this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
     this.handleSleepButtonClick = this.handleSleepButtonClick.bind(this);
+    this.intervalMethods = this.intervalMethods.bind(this);
+    this.updateTamagotchi = this.updateTamagotchi.bind(this);
+    this.stillAlive = this.stillAlive.bind(this);
+  }
+  //
+  // componentDidMount() {
+  //
+  // }
+
+  intervalMethods() {
+    this.updateTamagotchi();
+    this.stillAlive();
+    console.log("test");
   }
 
-  // componentDidMount() {
-  //   setInterval();
+  // componentWillUnmount() {
+  //   clearInterval(this.tamagotchiStats);
   // }
+
+  updateTamagotchi() {
+    let newTamagotchi = this.state.tamagotchi;
+    newTamagotchi.fun--;
+    newTamagotchi.hunger--;
+    newTamagotchi.energy--;
+    this.setState({tamagotchi: newTamagotchi});
+  }
 
   handleNewTamagotchiCreation(newTamagotchi) {
     this.setState({
       isAlive: true,
       tamagotchi: newTamagotchi
     });
+    this.tamagotchiStats = setInterval(() =>
+      this.intervalMethods(),
+    1000
+    );
+  }
+
+  stillAlive() {
+    if (this.state.tamagotchi.fun <= 0 || this.state.tamagotchi.hunger <= 0 || this.state.tamagotchi.energy <= 0) {
+      this.setState({isAlive: false});
+      console.log("Stats: " + this.tamagotchiStats);
+      clearInterval(this.tamagotchiStats);
+    }
   }
 
   handlePlayButtonClick() {

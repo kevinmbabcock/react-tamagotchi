@@ -12,7 +12,7 @@ function GameOver(props) {
   return (
     <div>
       <h1>Game Over!!!</h1>
-      <button on Click={handleNewPlayerCreation}>Play Again</button>
+      <button onClick={handleNewPlayerCreation}>Play Again</button>
     </div>
   );
 }
